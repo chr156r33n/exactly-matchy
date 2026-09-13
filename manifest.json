@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "exactly matchy",
+  "version": "1.4.0",
+  "description": "Create exact-match prompts from page text to check whether AI chatbots can retrieve and attribute the page.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://gemini.google.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["gemini-prefill.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "exactly matchy — create exact-match prompts",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  }
+}

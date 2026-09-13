@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exactly matchy</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand-lockup">
+        <img class="brand-icon" src="icons/icon-48.png" alt="" width="48" height="48" />
+        <div>
+          <p class="eyebrow">AI retrieval check</p>
+          <h1>exactly matchy</h1>
+        </div>
+      </div>
+      <p id="model-status" class="status">Checking Chrome AI…</p>
+    </header>
+
+    <main>
+      <label>
+        Prompts
+        <input id="count" type="number" min="3" max="8" value="5" />
+      </label>
+      <button id="analyze" class="primary" type="button">Select test passages</button>
+      <p id="error" class="error" role="alert"></p>
+
+      <section id="results" hidden>
+        <div class="results-heading">
+          <h2>Exact-match test prompts</h2>
+          <button id="copy-all" type="button">Copy all</button>
+        </div>
+        <p id="page-title" class="muted"></p>
+        <div id="prompt-list"></div>
+      </section>
+    </main>
+
+    <section class="explainer" aria-labelledby="explainer-title">
+      <h2 id="explainer-title">How it works</h2>
+      <p>
+        Exactly Matchy selects distinctive 20–30 word passages from the current
+        page and turns them into exact-match prompts.
+      </p>
+      <ol>
+        <li>Select test passages.</li>
+        <li>Open a prompt in ChatGPT, Claude, or Gemini.</li>
+        <li>Check whether the correct page is returned and attributed.</li>
+      </ol>
+      <p class="qualifier">
+        A match shows that the chatbot’s search pipeline can retrieve the
+        passage. It does not indicate rankings, visibility for broader prompts,
+        or traffic potential.
+      </p>
+      <!-- Add the final article link here when it is available. -->
+    </section>
+
+    <footer>
+      <p>
+        Page text and model selection stay on this device. On Gemini, this extension
+        transfers the link's prompt into the conversation box without submitting it.
+      </p>
+      <nav class="creator-links" aria-label="Creator links">
+        <span>By <a href="https://www.chris-green.net/" target="_blank" rel="noopener noreferrer">chris-green.net</a></span>
+        <a href="https://www.linkedin.com/in/chrisgreenseo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://bsky.app/profile/chris-green.net" target="_blank" rel="noopener noreferrer">Bluesky</a>
+        <a href="https://chrisgreenseo.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+        <a href="https://www.youtube.com/@ChrisGreenSEO" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </nav>
+    </footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
